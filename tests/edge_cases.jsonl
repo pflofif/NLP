@@ -1,0 +1,22 @@
+{"input": "СУПЕР ЗАКЛАД!!!", "expected": "супер заклад"}
+{"input": "Зупа... смачна. Дуже.", "expected": "зупа смачна дуже"}
+{"input": "Чекали 20 хв.  Жах.", "expected": "чекали 20 хв жах"}
+{"input": "http://googleusercontent.com/p/AF1Qip", "expected": "url"}
+{"input": "контакт: test@mail.com", "expected": "контакт email"}
+{"input": "тел: +380971234567", "expected": "тел phone"}
+{"input": "Ребра'ята", "expected": "ребра’ята"}
+{"input": "Смачно 😊😊😊", "expected": "смачно"}
+{"input": "Не рекомендую...зовсім.", "expected": "не рекомендую зовсім"}
+{"input": "Привіт,Львів", "expected": "привіт львів"}
+{"input": "  багато   пробілів  ", "expected": "багато пробілів"}
+{"input": "Вулик:найкращий ресторан", "expected": "вулик найкращий ресторан"}
+{"input": "Курка/шніцель", "expected": "курка шніцель"}
+{"input": "Щось неймовірне!!!", "expected": "щось неймовірне"}
+{"input": "REALLY GOOD!", "expected": "really good"}
+{"input": "anduty (андрути)", "expected": "anduty андрути"}
+{"input": "10/10 рекомендую", "expected": "10 10 рекомендую"}
+{"input": "Львів'янин", "expected": "львів’янин"}
+{"input": "це-чудово", "expected": "це чудово"}
+{"input": "Табуляція\tтут", "expected": "табуляція тут"}
+{"input": "emoji 🍕 burger", "expected": "emoji burger"}
+{"input": "", "expected": ""}
