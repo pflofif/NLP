@@ -1,0 +1,33 @@
+{"id": "ec_amt_01", "raw_text": "100% рекомендую!", "field_type": "AMOUNT", "expected_behavior": "НЕ витягувати — 100% є відсотком, не грошовою сумою", "expected_extractions": 0}
+{"id": "ec_amt_02", "raw_text": "оцінка 5/5, приходьте знову", "field_type": "AMOUNT", "expected_behavior": "НЕ витягувати — 5/5 є рейтингом, не сумою", "expected_extractions": 0}
+{"id": "ec_amt_03", "raw_text": "200грн без пробілу", "field_type": "AMOUNT", "expected_behavior": "ВИТЯГНУТИ — 200.0 UAH, навіть без пробілу між числом і грн", "expected_extractions": 1}
+{"id": "ec_amt_04", "raw_text": "85 грн.не вартує", "field_type": "AMOUNT", "expected_behavior": "ВИТЯГНУТИ — 85.0 UAH, крапка є частиною скорочення грн., не розділювачем речення", "expected_extractions": 1}
+{"id": "ec_amt_05", "raw_text": "1 711 грн за вечерю", "field_type": "AMOUNT", "expected_behavior": "ВИТЯГНУТИ — 1711.0 UAH, пробіл у числі ігнорується", "expected_extractions": 1}
+{"id": "ec_amt_06", "raw_text": "заплатили 12,50 грн", "field_type": "AMOUNT", "expected_behavior": "ВИТЯГНУТИ — 12.5 UAH, кома як десятковий розділювач", "expected_extractions": 1}
+{"id": "ec_amt_07", "raw_text": "3 страви, 2 порції", "field_type": "AMOUNT", "expected_behavior": "НЕ витягувати — числа без валютного позначення", "expected_extractions": 0}
+{"id": "ec_amt_08", "raw_text": "більше ніж 600 грн вже надто", "field_type": "AMOUNT", "expected_behavior": "ВИТЯГНУТИ — 600.0 UAH незважаючи на контекст порівняння", "expected_extractions": 1}
+{"id": "ec_amt_09", "raw_text": "грн за нічого", "field_type": "AMOUNT", "expected_behavior": "НЕ витягувати — немає числа перед грн", "expected_extractions": 0}
+{"id": "ec_amt_10", "raw_text": "550 грн / особу", "field_type": "AMOUNT", "expected_behavior": "ВИТЯГНУТИ — 550.0 UAH, span закінчується на 'грн', знак / поза span", "expected_extractions": 1}
+{"id": "ec_date_01", "raw_text": "чекали 30 хвилин", "field_type": "DATE", "expected_behavior": "НЕ витягувати — 30 хвилин є тривалістю, не датою", "expected_extractions": 0}
+{"id": "ec_date_02", "raw_text": "В неділю ді-джей крутив музику", "field_type": "DATE", "expected_behavior": "ВИТЯГНУТИ DATE_WEEKDAY: SUN, raw='В неділю'", "expected_extractions": 1}
+{"id": "ec_date_03", "raw_text": "Сьогодні зайшли в заклад", "field_type": "DATE", "expected_behavior": "ВИТЯГНУТИ DATE_RELATIVE: TODAY, raw='Сьогодні'", "expected_extractions": 1}
+{"id": "ec_date_04", "raw_text": "відпочивали у суботу.Чесно", "field_type": "DATE", "expected_behavior": "ВИТЯГНУТИ DATE_WEEKDAY: SAT, end_char не включає крапку", "expected_extractions": 1}
+{"id": "ec_date_05", "raw_text": "2 години очікування на офіціанта", "field_type": "DATE", "expected_behavior": "НЕ витягувати — тривалість, а не дата", "expected_extractions": 0}
+{"id": "ec_date_06", "raw_text": "відвідали 12.03.2025", "field_type": "DATE", "expected_behavior": "ВИТЯГНУТИ DATE_ABS: 2025-03-12", "expected_extractions": 1}
+{"id": "ec_date_07", "raw_text": "у березні відкрили новий зал", "field_type": "DATE", "expected_behavior": "ВИТЯГНУТИ DATE_MONTH: value=березні", "expected_extractions": 1}
+{"id": "ec_date_08", "raw_text": "рейтинг 10 з 10, приголомшливо", "field_type": "DATE", "expected_behavior": "НЕ витягувати — 10 з 10 є рейтингом, не датою", "expected_extractions": 0}
+{"id": "ec_date_09", "raw_text": "влітку тут чудово", "field_type": "DATE", "expected_behavior": "НЕ витягувати — 'влітку' є сезоном, поза scope DATE", "expected_extractions": 0}
+{"id": "ec_date_10", "raw_text": "Вчора і позавчора ходили двічі", "field_type": "DATE", "expected_behavior": "ВИТЯГНУТИ 2 DATE_RELATIVE: YESTERDAY та DAY_BEFORE_YESTERDAY", "expected_extractions": 2}
+{"id": "ec_loc_01", "raw_text": "це самий центр", "field_type": "LOCATION", "expected_behavior": "НЕ витягувати — 'центр' без Львова відсутній у словнику", "expected_extractions": 0}
+{"id": "ec_loc_02", "raw_text": "у Львові це мій топчик", "field_type": "LOCATION", "expected_behavior": "ВИТЯГНУТИ LOCATION: Львів", "expected_extractions": 1}
+{"id": "ec_loc_03", "raw_text": "з видом на дахи старого міста", "field_type": "LOCATION", "expected_behavior": "ВИТЯГНУТИ LOCATION: Старе місто, raw='старого міста'", "expected_extractions": 1}
+{"id": "ec_loc_04", "raw_text": "на площі Ринок у центрі", "field_type": "LOCATION", "expected_behavior": "ВИТЯГНУТИ LOCATION: площа Ринок. 'у центрі' без Львова — НЕ витягувати", "expected_extractions": 1}
+{"id": "ec_loc_05", "raw_text": "Підзамче — чудовий район", "field_type": "LOCATION", "expected_behavior": "ВИТЯГНУТИ LOCATION: Підзамче (навіть якщо вживається як назва закладу)", "expected_extractions": 1}
+{"id": "ec_loc_06", "raw_text": "десь на вулиці поставити знак", "field_type": "LOCATION", "expected_behavior": "НЕ витягувати — 'вулиці' без конкретної назви", "expected_extractions": 0}
+{"id": "ec_loc_07", "raw_text": "Були в Київ і Варшаві, а потім у Львові", "field_type": "LOCATION", "expected_behavior": "ВИТЯГНУТИ тільки Львів — Київ і Варшава поза scope", "expected_extractions": 1}
+{"id": "ec_loc_08", "raw_text": "на ПЛОЩІ РИНОК (верхній регістр)", "field_type": "LOCATION", "expected_behavior": "ВИТЯГНУТИ — пошук case-insensitive", "expected_extractions": 1}
+{"id": "ec_loc_09", "raw_text": "Стрийський парк гарний восени", "field_type": "LOCATION", "expected_behavior": "ВИТЯГНУТИ LOCATION: Стрийський парк", "expected_extractions": 1}
+{"id": "ec_loc_10", "raw_text": "якомусь місці поблизу центру", "field_type": "LOCATION", "expected_behavior": "НЕ витягувати — 'якомусь місці' та 'центру' без Львова не у словнику", "expected_extractions": 0}
+{"id": "ec_mixed_01", "raw_text": "Сьогодні на площі Ринок заплатили 240 грн.", "field_type": "ALL", "expected_behavior": "ВИТЯГНУТИ: DATE_RELATIVE=TODAY, LOCATION=площа Ринок, AMOUNT=240 UAH", "expected_extractions": 3}
+{"id": "ec_mixed_02", "raw_text": "30- ти хвилин очікування в суботу", "field_type": "ALL", "expected_behavior": "НЕ DATE для '30': тривалість. ВИТЯГНУТИ DATE_WEEKDAY=SAT", "expected_extractions": 1}
+{"id": "ec_mixed_03", "raw_text": "Вчора у Старому місті з'їли за 300 грн.", "field_type": "ALL", "expected_behavior": "ВИТЯГНУТИ: DATE_RELATIVE=YESTERDAY, LOCATION=Старе місто, AMOUNT=300 UAH", "expected_extractions": 3}
