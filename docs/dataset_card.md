@@ -46,3 +46,16 @@
 
 PHONE/EMAIL/URL — поза scope (замасковані в ЛР2).  
 Gold subset: 61 запис, precision=1.000 (внутрішня консистентність).
+
+
+---
+
+## Splits & leakage (ЛР5)
+
+- **Стратегія:** Group split по place_name, seed=42, 80/10/10 (train/val/test)
+- **Розміри:** train=3723, val=444, test=473
+- **Group leakage:** 0 — заклади повністю ізольовані між сплітами
+- **Exact duplicates train∩test:** 7 (однакові тексти з різних закладів — мінімальний ризик)
+- **Near-duplicates (cosine≥0.95):** 226 пар (переважно короткі відгуки)
+- **Template leakage:** 0
+- Manifest: docs/splits_manifest_lab5.json

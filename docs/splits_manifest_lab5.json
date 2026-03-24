@@ -1,0 +1,21 @@
+{
+  "generated_at": "2026-03-24T22:06:34.111081+00:00",
+  "seed": 42,
+  "strategy": "group",
+  "group_col": "place_name",
+  "target_col": "rating",
+  "splits": {
+    "train": {
+      "n_docs": 3723,
+      "frac": 0.8024
+    },
+    "val": {
+      "n_docs": 444,
+      "frac": 0.0957
+    },
+    "test": {
+      "n_docs": 473,
+      "frac": 0.1019
+    }
+  }
+}
