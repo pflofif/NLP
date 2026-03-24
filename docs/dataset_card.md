@@ -59,3 +59,14 @@ Gold subset: 61 запис, precision=1.000 (внутрішня консисте
 - **Near-duplicates (cosine≥0.95):** 226 пар (переважно короткі відгуки)
 - **Template leakage:** 0
 - Manifest: docs/splits_manifest_lab5.json
+
+## Classification baseline (ЛР6)
+
+- **Напрям:** C (Retrieval) — бінарна класифікація пар (query, doc) → relevant / not_relevant
+- **Запити:** 40, релевантних пар: 43 (labels.csv)
+- **Побудова датасету:** 1–2 позитиви + 20 random-negatives на запит; ознака = query+doc конкатенація
+- **Split:** query-level 80/10/10, seed=42 (гарантує позитиви в кожному сплті)
+- **B1:** text_v2, TF-IDF unigrams, LogReg — val acc=0.9524, val F1=0.4878
+- **B2 (winner):** noun_adj_text, TF-IDF bigrams, balanced — val acc=0.9881, val F1=0.9255
+- **Ризики:** малий тест (4 запити, 3 позитиви); hard negatives потрібні для кращого розмежування
+
